@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head> 
+    
+    <!-- meta data -->
+    <meta charset="UTF-8" />
+    <meta name="description" content="Website grab weather inforamtion from a server API" />
+    <meta name="keywords" content="weather, forecast, ikemous, iek, barranco, city, rain, hot, cold," />
+    <meta name="author" content="Ikemous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- End Meta Data -->
+
+    <!-- Title -->
+    <title>Weather</title>
+
+    <!-- free image from https://www.freeimages.com/photo/clipart-cloud-1335934 -->
+    <link rel="icon" href="./Assets/images/cloud.jpg" />
+    
+    <!-- Link CSS Style Sheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./Assets/css/style.css" />
+    <!-- End CSS Style Sheet -->
+
+</head>
+
+
+
+<body>
+
+    <div class="wrapper" >
+        
+        <!-- Weather Dashboard Header -->
+        <header class="container-full"  >
+            
+            <section class="bg-dark row" >
+
+                <article class="col-sm-12" style="background-color:#131415;">
+                    <div class="image">
+                        <img id="DevOps" src="" alt="cat" srcset="/Assets/images/weather.png" />
+                    </div>
+                        
+
+                
+                </article>
+                
+            </section>
+
+        </header>
+        <!-- Weather Dashboard Header -->
+
+        
+
+        <!-- container -->
+        <main class="container weather">
+
+            <!-- big row to hold all items -->
+            <section class="row">
+
+                <!-- col 4? Hold the user interaction section-->
+                <section class="col-sm-3">
+                    
+                    <article class="row listCol">
+                        <h5>Search For City:</h5>
+                    </article>  
+                    
+                    <!-- User Input Section -->
+                    <article class="row listCol">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="City Name" id="cityInput" />
+                            <div class="input-group-append">
+                                <button class="btn btn-success" type="button" id="addBtn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- End User Input Section -->
+
+                    <!-- To hold all main city items -->
+                    <article class="row listCol">
+                        <ul class="list-group" id="preSetCities">
+                            <li class="list-group-item" data-search="Tunisia">Tunisia</li>
+                            <li class="list-group-item" data-search="Algeria">Algeria</li>
+                            <li class="list-group-item" data-search="Canada">Canada</li>
+                        </ul>
+                    </article>
+                    <!-- End all main city Items -->
+
+                    <!-- Hold all saved city items -->
+                    <article class="row listCol">
+                        <div class="dropDown col-sm-12">
+                            <button id="savedListButton"><strong>Searched Cities</strong></button>
+                            <div class="dropDownContent">
+                                <ul class="list-group" id="citiesList">
+                                </ul> 
+                            </div>
+                        </div>
+                        <button id="clearButton"><strong>Clear History</strong></button>
+                    </article>
+                    <!-- End all saved city items -->
+
+                </section>
+                <!-- End User Interaction Section -->
+                    
+                <!-- Hold all cards for weather information -->
+                <section class="col-sm-9 weatherRow">
+                    <!-- Hold main card body -->
+                    <section class="row ">
+                        <div class="card mainCard">
+                            <div class="card-body">
+                                <div class="row">
+                                    <h4 class="col-sm-12 card-title text-center" id="cityHeader"> City </h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="card-text" id="tempText"> Temp: </p>
+                                        <p class="card-text" id="humidityText"> Humidity: </p>
+                                        <p class="card-text" id="windSpeedText"> WindSpeed: </p>
+                                        <p class="card-text">UV Index:    <span id="indexText"></span> </p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img class="row" id="mainCardIcon" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End main card body -->
+
+                    <br> <br>
+                    <h3>What about the next 5 days? </h3>
+                    <br>
+                    <!-- Hold forecast cards -->
+                    <article class="card-deck" id="forecastDiv">
+
+                    </article>
+                    <!-- End forecast cards -->
+
+                </section>
+                <!-- End Hold all cards for weather information -->
+
+
+            </section>
+            
+        </main>
+        <div class="container">
+            <!-- Weather Dashboard Instructions Jumbotron -->
+            <article class="jumbotron">
+                <h1 class="display-6">How This Works!</h1>
+                <p class="lead">Purpose: To display weather Information from an API Follow The Easy Steps Below!</p>
+                <hr class="my-2">
+                <ul>
+                    <li>Type Desired City</li>
+                    <li>Press "Enter" or the Search Button</li>
+                </ul>
+                <p class="lead">Want to look at a previously searched City?</p>
+                <hr class="my-2">
+                <ul>
+                    <li>Click on the saved cities header</li>
+                    <li>Pick which city you would like to view</li>
+                </ul>
+                <hr class="my-2">
+                <p class="lead">It's that simple!</p>
+
+            </article>
+            <!-- End Instructions JumboTron -->
+
+        </div>
+        <!-- Footer -->
+        <br>
+        <footer class="container-full text-center">
+
+            <!-- Grid row -->
+            <div class= "row">
+                    
+                <!-- Grid column -->
+                <div class="col-md-6">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase">Weather Dashboard</h5>
+                   <p>&#169Yahya Abulhaj</p>
+                   
+
+                </div>
+                <!-- Grid column -->
+
+                <hr/>   
+
+                <!-- Grid column -->
+                <div class="col-md-6">
+
+                <!-- Links -->
+                <h5 class="text-uppercase">Useful Links</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                    <a href="https://openweathermap.org/api" rel="noopener noreferrer" target="_blank">Weather API</a>
+                    </li>
+                    <li>
+                    <a href="https://openweathermap.org/weather-conditions" rel="noopener noreferrer" target="_blank">Weather Links</a>
+                    </li>
+                    <li>
+                    <a href="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat=40.6661&lon=-111.9880&zoom=5" rel="noopener noreferrer" target="_blank">Weather Map</a>
+                    </li>
+                    <li>
+                    <a href="https://en.wikipedia.org/wiki/Ultraviolet_index" rel="noopener noreferrer" target="_blank">UV Index Information</a>
+                    </li>
+                </ul>
+
+                </div>
+                <!-- Social buttons -->
+                <ul class="list-unstyled list-inline text-center">
+                      <li class="list-inline-item">
+                    <a class="btn-floating btn-li mx-1" href="https://www.linkedin.com/in/yahya-abulhaj/" rel="noopener noreferrer" target="_blank">
+                        <i class="fab fa-linkedin-in"> </i>
+                    </a>
+                    </li>
+                      <li class="list-inline-item">
+                    <a class="btn-floating btn-dribbble mx-1" href="https://github.com/Y4HYA4" rel="noopener noreferrer" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                    <a class="btn-floating btn-tw mx-1" href="https://twitter.com/AbulhajYahya" rel="noopener noreferrer" target="_blank">
+                        <i class="fab fa-twitter"> </i>
+                    </a>
+                    </li>
+                 
+                  
+                </ul>
+                <!-- Social buttons -->
+
+            </div>
+            <!-- Grid row -->
+        </footer>
+        <!-- End Footer -->
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
+    <script src="./Assets/js/myScript.js"></script>
+    <!-- End Scripts -->
+
+
+</body>
+
+
+
+ 
+
+</html>
+
+

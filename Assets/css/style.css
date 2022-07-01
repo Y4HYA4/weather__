@@ -1,0 +1,180 @@
+/* Page Stylings */
+body{
+    background-color: #131415;
+    color: white;
+}
+.wrapper{
+    margin-left: 0px
+}
+header{ padding-bottom: 50px;}
+header .row{
+    padding-top: 25px;
+    padding: 20px;
+}
+.link{ display: block;}
+.bg-dark{ color: white;}
+.card{ 
+    color: rgb(255, 255, 255);
+    background-color: #131415;    
+    border: 3px solid;
+    border-color: #007BFF;
+}
+.card-title{ font-weight: bold;}
+.card-body img{ height: 100px;}
+.row{
+    margin-left:0;
+    margin-right:0;
+}
+ul{width: 100%;}
+/* End Page Stylings */
+
+/* UV CSS */
+#indexText{
+    padding: 2px;
+    border-radius: 5px;
+}
+.uvLow{background-color: green;}
+.uvModerate{background-color: yellow;}
+.uvHigh{ background-color: orange;}
+.uvVeryHigh{background-color: red;}
+.uvExtreme{background-color: violet;}
+/* End UV CSS */
+
+/* Forecast CSS */
+.forecast{
+    margin-right: 5px!important;
+    margin-left: 5px!important;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.forecast .card-body{
+    padding: 5px;
+    left: 0;
+    margin-left: -30px;
+    padding-right: 0px;
+}
+.forecast .card-body img{
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.forecast .card-body h4{
+    font-size: 14px;
+    font-weight: bold;
+}
+/* End Forest CSS */
+
+/* Footer CSS */
+footer{
+    background-color: #131415;
+}
+footer .row{
+    padding-top: 15px;
+    padding: 20px;
+}
+/* End Footer CSS */
+
+/* User User Ineraction CSS */
+.input-group{ width: 80%;}
+.listCol{
+    padding-bottom: 10px;
+}
+.list-group-item{
+    color: black;
+    background-color: #DEE5E5;
+}
+#preSetCities{ width: 85%;}
+.dropDown {
+    padding-left: 0;
+    padding-right: 0;
+}
+.dropDownContent {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 85%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+#clearButton, #savedListButton{
+    margin-top: 10px;
+    width: 85%;
+    background-color: #007BFF;
+    color: #000000;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+/* End User Interaction CSS*/
+
+/* Main Weather Card */
+#mainCardIcon{
+    margin-left: auto;
+    margin-right: auto;
+}
+.mainCard{
+    width: 100%;
+    border: 5px solid;
+    border-color: #007BFF;    
+}
+.weather{
+    padding-top: 30px;
+    padding-bottom: 280px;
+}
+/* End Main Weather Card */
+
+.jumbotron{
+    margin: 5px!important; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(255, 255, 255);
+    background-color: #131415;
+    border: 2px solid;
+    border-color: #007BFF;
+}
+
+
+/* Media CSS */
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 800px;
+  }
+  .container{
+      max-width: 100%;
+  }
+  
+  .container-full{
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: 500px;
+  }
+  .container{
+      max-width: 100%;
+  }
+  
+  .container-full{
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 365px) {
+    .wrapper {
+      width: 365px;
+    }
+    .container{
+        max-width: 100%;
+    }
+    
+    .container-full{
+      max-width: 100%;
+      width: 100%;
+      margin-left: 10px!important;
+    }
+  }
+/* End Media CSS */
+
